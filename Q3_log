@@ -1,0 +1,122 @@
+# Name: Arjot Singh Rai
+# NSID: arr455
+# Student Number: 11258421
+
+# This is the annotated test log for the count_cols.sh shell script
+# All the files used for testing are submitted along with this log
+
+// testing the script with substrates.txt
+// should output 10
+
+// testing when the file is provided as a command line argument 
+arr455@tux7:~/Documents/cmpt214/count_cols> ./count_cols.sh substrates.txt
+10
+// testing when the file is redirected from the standard input
+arr455@tux7:~/Documents/cmpt214/count_cols> cat substrates.txt | ./count_cols.sh
+10
+
+// testing the script with marks.txt, columns delimited by !
+// should output 8
+arr455@tux7:~/Documents/cmpt214/count_cols> ./count_cols.sh -d ! < marks.txt
+8
+arr455@tux7:~/Documents/cmpt214/count_cols> ./count_cols.sh -d ! marks.txt
+8
+// checking the exit status
+arr455@tux7:~/Documents/cmpt214/count_cols> echo $?
+0
+
+// testing with /dev/null
+// should output 1
+
+// /dev/null is passed as command line argument
+arr455@tux7:~/Documents/cmpt214/count_cols> ./count_cols.sh /dev/null
+1
+// /dev/null is redirected from standard input
+arr455@tux7:~/Documents/cmpt214/count_cols> ./count_cols.sh /dev/null
+1
+
+// testing with test1.txt a file with just one column
+// should output 1
+
+// test1.txt given as a command line argument
+arr455@tux6:~/Documents/cmpt214/count_cols> ./count_cols.sh test1.txt
+1
+// test1.txt redirected from the standard input
+arr455@tux6:~/Documents/cmpt214/count_cols> ./count_cols.sh < test1.txt
+1
+
+// testing with test2.txt a file with 7 columns
+// should output 7
+
+// test2.txt provided as a command line argument
+arr455@tux6:~/Documents/cmpt214/count_cols> ./count_cols.sh test2.txt
+7
+// test2.txt redirected from standard input
+arr455@tux6:~/Documents/cmpt214/count_cols> ./count_cols.sh < test2.txt
+7
+
+// testing with the test3.txt file, columns delimited by @
+// testing the complete funcionality of the script
+// should output 7
+arr455@tux6:~/Documents/cmpt214/count_cols> ./count_cols.sh -h -d @ test3.txt
+Usage: count_cols.sh [-h] [-d delimiter] [file]
+7
+arr455@tux6:~/Documents/cmpt214/count_cols> ./count_cols.sh -h -d @ < test3.txt
+Usage: count_cols.sh [-h] [-d delimiter] [file]
+7
+// cheking the exit status
+arr455@tux7:~/Documents/cmpt214/count_cols> echo $?
+0
+
+
+// testing with an invalid option
+// should print the error message with the help message
+arr455@tux7:~/Documents/cmpt214/count_cols> ./count_cols.sh -m
+invalid option "-m"
+Usage: count_cols.sh [-h] [-d delimiter] [file]
+// checking the exit status, should get 1
+arr455@tux7:~/Documents/cmpt214/count_cols> echo $?
+1
+
+// testing when no argument is provided to the -d option
+// should print the error message with the help message  
+arr455@tux7:~/Documents/cmpt214/count_cols> ./count_cols.sh -d
+"-d" requires an argument
+Usage: count_cols.sh [-h] [-d delimiter] [file]
+// checking the exit status, should get 1
+arr455@tux7:~/Documents/cmpt214/count_cols> echo $?
+1
+
+// testing with a file which does not exist
+// should print the error message with the help message 
+arr455@tux7:~/Documents/cmpt214/count_cols> ./count_cols.sh foobar
+file foobar does not exist or is unreadable
+// checking the exit status, should get 1
+arr455@tux7:~/Documents/cmpt214/count_cols> echo $?
+1
+
+// testing when more than required arguments on the command line
+// should print the error message with the help message
+arr455@tux7:~/Documents/cmpt214/count_cols> ./count_cols.sh foo bar
+extraneous input on command line
+Usage: count_cols.sh [-h] [-d delimiter] [file]
+// checking the exit status, should get 1
+arr455@tux7:~/Documents/cmpt214/count_cols> echo $?
+1
+
+// testing with the -h option alone
+// should print the usage message
+arr455@tux7:~/Documents/cmpt214/count_cols> ./count_cols.sh -h
+Usage: count_cols.sh [-h] [-d delimiter] [file]
+// checking the exit status, should get 0
+arr455@tux7:~/Documents/cmpt214/count_cols> echo $?
+0
+
+// testing with an invalid option while giving a valid file name
+// should print the error message with the help message
+arr455@tux7:~/Documents/cmpt214/count_cols> ./count_cols.sh -m substrates.txt
+invalid option "-m"
+Usage: count_cols.sh [-h] [-d delimiter] [file]
+// checking the exit status, should get 1
+arr455@tux7:~/Documents/cmpt214/count_cols> echo $?
+1

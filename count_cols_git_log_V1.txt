@@ -1,0 +1,52 @@
+commit cb8a977d197202624d9e71b889d4b9118370971e
+Author: Arjot Singh Rai (arr455) <arr455@mail.usask.ca>
+Date:   Thu Dec 12 22:25:29 2019 -0600
+
+    Some more testing done
+
+commit 7e96a44fc0674aacde6abaaa92a56bda80e87303
+Author: Arjot Singh Rai (arr455) <arr455@mail.usask.ca>
+Date:   Thu Dec 12 22:23:33 2019 -0600
+
+    Testing of the script completed
+
+commit 6e9188de3ef0a35d2e2dcdc5af49785da537fc52
+Author: Arjot Singh Rai (arr455) <arr455@mail.usask.ca>
+Date:   Thu Dec 12 21:51:34 2019 -0600
+
+    Many errors involving the -d option corrected.
+    The script distinguishes between a regular file and a directory
+
+commit eedf52c6e362fa27eb05d295562bc8bdf7851b74
+Author: Arjot Singh Rai (arr455) <arr455@mail.usask.ca>
+Date:   Thu Dec 12 12:12:12 2019 -0600
+
+    The script now handles most errors.
+    It can show warnings of improper usage of the script.
+
+commit 3c07607b81b1ed2df21eb88a73c4b1b8c669ef32
+Author: Arjot Singh Rai (arr455) <arr455@mail.usask.ca>
+Date:   Thu Dec 12 01:51:53 2019 -0600
+
+    The shell script can be given the -d option to specify the delimiter.
+
+commit fbc75a65500e3df331e9f9773e8fba274842f159
+Author: Arjot Singh Rai (arr455) <arr455@mail.usask.ca>
+Date:   Thu Dec 12 01:36:45 2019 -0600
+
+    The script now can handle the -h option.
+
+commit 3b70e14bc281ed495dc191063bab7c7bba8964a4
+Author: Arjot Singh Rai (arr455) <arr455@mail.usask.ca>
+Date:   Wed Dec 11 16:28:30 2019 -0600
+
+    The shell script counts the number of columns in a file.
+    If the the file is not present then input is read from standard input.
+    It is still assumed that the columns are delimited by tabs.
+    Other functionality still to be added.
+
+commit 27f9b0c075a77fd5c5eab195c992a8dca9171b57
+Author: Arjot Singh Rai (arr455) <arr455@mail.usask.ca>
+Date:   Wed Dec 11 15:40:21 2019 -0600
+
+    Initial commit; the README.md file created.
